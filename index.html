@@ -1,0 +1,304 @@
+<!doctype html>
+<!-- MAKİNE BERBER — tek sayfalık site. Bilgiler müşteriden alınmıştır; fiyat ve yorum uydurulmaz. -->
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Makine Berber · Tokatköy, Beykoz</title>
+<meta name="description" content="Makine Berber, Tokatköy Beykoz. Klasik ve modern saç kesimi, fade, sakal ve kontür. WhatsApp'tan randevu alın: 0542 243 20 29.">
+<meta property="og:title" content="Makine Berber · Tokatköy, Beykoz">
+<meta property="og:description" content="Ustalık, özen ve güven bir arada. Saç kesimi, fade, sakal ve kontür.">
+<meta property="og:image" content="dukkan.jpg">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HairSalon","name":"Makine Berber","telephone":"+905422432029","image":"dukkan.jpg","address":{"@type":"PostalAddress","streetAddress":"Sultan Aziz Cd.","addressLocality":"Tokatköy, Beykoz","addressRegion":"İstanbul","postalCode":"34825","addressCountry":"TR"}}</script>
+<meta name="theme-color" content="#0b0a08">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --siyah: #0b0a08;        /* sicak derin siyah */
+    --siyah-2: #12100d;      /* katman */
+    --siyah-3: #1a1712;      /* kart/kutu */
+    --altin: #e2bc5a;        /* parlak altin */
+    --altin-acik: #f6dc8c;
+    --altin-koyu: #a8842f;
+    --fildisi: #efe8d8;
+    --soluk: #a89f8c;
+    --tel: rgba(226, 188, 90, 0.28);   /* ince altin tel */
+    --baslik: "Bodoni Moda", "Didot", "Bodoni 72", "Times New Roman", serif;
+    --metin: "Hanken Grotesk", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; background: var(--siyah); }
+  body { margin: 0; font-family: var(--metin); font-size: 1.0625rem; line-height: 1.65; color: var(--fildisi); background: var(--siyah);
+    padding-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px)); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--altin); outline-offset: 4px; }
+  ::selection { background: var(--altin); color: var(--siyah); }
+  .kap { max-width: 74rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* metalik altin yazi: isik vurmus gibi */
+  .altin-yazi, h2, .giris h1 {
+    background: linear-gradient(100deg, var(--altin-koyu) 0%, var(--altin) 28%, var(--altin-acik) 48%, var(--altin) 66%, var(--altin-koyu) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  h2 { font-family: var(--baslik); font-weight: 500; font-size: clamp(2.4rem, 5.5vw, 3.6rem); line-height: 1.04; letter-spacing: -0.01em; margin: 0 0 0.9rem; }
+  h3 { font-family: var(--baslik); font-weight: 500; color: var(--fildisi); }
+  section { padding: 5.5rem 0; }
+  .alt { color: var(--soluk); max-width: 36rem; margin: 0 0 3rem; }
+  /* bolum ayiraci: ortada kucuk altin elmasli ince tel */
+  .ayrac { height: 1px; background: linear-gradient(90deg, transparent, var(--tel) 20%, var(--tel) 80%, transparent); position: relative; }
+  .ayrac::after { content: ""; position: absolute; left: 50%; top: -4px; width: 8px; height: 8px; background: var(--altin); transform: translateX(-50%) rotate(45deg); }
+
+  /* ---------- Sabit ust cubuk ---------- */
+  .ust { position: fixed; inset: 0 0 auto; z-index: 30; padding: calc(0.9rem + env(safe-area-inset-top, 0px)) 0 0.9rem;
+    background: rgba(11, 10, 8, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--tel); }
+  .ust .kap { display: flex; align-items: center; gap: 2rem; }
+  .logo { font-family: var(--baslik); font-size: 1.4rem; color: var(--altin); letter-spacing: 0.01em; }
+  .ust nav { display: none; gap: 1.75rem; margin-left: auto; font-size: 0.95rem; color: var(--fildisi); }
+  .ust nav a:hover { color: var(--altin-acik); }
+  .ust .rnd { margin-left: auto; }
+  @media (min-width: 56rem) { .ust nav { display: flex; } .ust .rnd { margin-left: 0; } }
+  .dugme { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; font-weight: 700; font-size: 0.98rem; letter-spacing: 0.01em;
+    padding: 0.85rem 1.45rem; border-radius: 2px; border: 1px solid transparent; transition: background .25s, color .25s, border-color .25s, box-shadow .25s; }
+  .dugme.ana { background: linear-gradient(180deg, var(--altin-acik), var(--altin) 55%, var(--altin-koyu)); color: #1b1407; box-shadow: 0 0 0 1px rgba(246,220,140,0.35) inset; }
+  .dugme.ana:hover { box-shadow: 0 0 0 1px rgba(246,220,140,0.6) inset, 0 8px 28px -10px rgba(226,188,90,0.55); }
+  .dugme.ince, .dugme.koyu { border-color: var(--tel); color: var(--altin-acik); background: transparent; }
+  .dugme.ince:hover, .dugme.koyu:hover { border-color: var(--altin); background: rgba(226,188,90,0.06); }
+  .ust .dugme { padding: 0.6rem 1.1rem; font-size: 0.92rem; }
+
+  /* ---------- Giris ---------- */
+  .giris { position: relative; min-height: 100svh; display: grid; align-items: end; overflow: hidden; background: var(--siyah); padding: 7rem 0 4rem; }
+  .giris .foto-arka { position: absolute; inset: 0; background: radial-gradient(80% 65% at 72% 28%, #2a2316 0%, #15120c 45%, #0b0a08 100%); }
+  .giris .foto-arka img { width: 100%; height: 100%; object-fit: cover; }
+  .giris .foto-arka::after { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(11,10,8,0.2) 0%, rgba(11,10,8,0.45) 45%, rgba(11,10,8,0.95) 100%); }
+  .giris::after { content: ""; position: absolute; left: 1.5rem; right: 1.5rem; bottom: 1.5rem; height: 1px; background: var(--tel); }
+  .giris .ipucu { position: absolute; top: 6.5rem; right: 1.5rem; font-size: 0.82rem; font-style: italic; color: #7d745f; z-index: 1; }
+  .giris .kap { position: relative; z-index: 1; width: 100%; }
+  .giris h1 { font-family: var(--baslik); font-weight: 500; margin: 0; font-size: clamp(3.8rem, 14vw, 9.5rem); line-height: 0.92; letter-spacing: -0.02em; }
+  .giris .yer { margin: 1.25rem 0 0; font-size: 1.1rem; color: var(--altin); }
+  .giris .ozet { max-width: 31rem; margin: 0.75rem 0 0; color: #cfc6b2; font-size: 1.1rem; }
+  .giris .eylemler { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 2rem; }
+  .giris .eylemler .dugme { padding: 0.95rem 1.6rem; font-size: 1rem; }
+  @media (prefers-reduced-motion: no-preference) {
+    .giris h1 { background-size: 220% 100%; animation: belir 1.2s cubic-bezier(.2,.7,.2,1) both, parilti 2.6s ease-out .4s 1 both; }
+    .giris .yer, .giris .ozet, .giris .eylemler { animation: belir 1.2s cubic-bezier(.2,.7,.2,1) both; }
+    .giris .yer { animation-delay: .12s } .giris .ozet { animation-delay: .22s } .giris .eylemler { animation-delay: .32s }
+    @keyframes belir { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    @keyframes parilti { from { background-position: 100% 0; } to { background-position: 0 0; } }
+  }
+
+  /* ---------- Fotograf yer tutucusu ---------- */
+  .foto { position: relative; overflow: hidden; display: grid; place-items: end start; padding: 1rem; border: 1px solid var(--tel);
+    background: radial-gradient(130% 90% at 30% 15%, #241f16, #16130e 60%, #0f0d0a); }
+  .foto.koyu { background: radial-gradient(130% 90% at 30% 15%, #2b2417, #17130d 60%, #0b0a08); }
+  .foto span { position: relative; font-size: 0.85rem; font-style: italic; color: #7d745f; }
+  .foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .foto::after { content: ""; position: absolute; inset: 0.6rem; border: 1px solid rgba(226,188,90,0.12); pointer-events: none; }
+
+  /* ---------- Hikayemiz ---------- */
+  .hikaye .kap { max-width: 52rem; }
+  .hikaye .dukkan { aspect-ratio: 16 / 10; margin-top: 3rem; padding: 0; }
+  .alinti { font-family: var(--baslik); font-style: italic; font-size: clamp(1.6rem, 3.4vw, 2.15rem); line-height: 1.3; margin: 0 0 1.5rem; color: var(--altin-acik); }
+  .hikaye p { max-width: 34rem; color: #d8cfbb; }
+  .imza { margin-top: 1.5rem; color: var(--soluk) !important; font-size: 0.95rem; }
+
+  /* ---------- Hizmetler ---------- */
+  .hizmetler { background: var(--siyah-2); }
+  .menu { display: grid; gap: 0 4.5rem; }
+  @media (min-width: 56rem) { .menu { grid-template-columns: 1fr 1fr; } }
+  .kalem { padding: 1.4rem 0; border-top: 1px solid var(--tel); }
+  .kalem .satir { display: flex; align-items: baseline; gap: 1rem; }
+  .kalem h3 { font-size: 1.6rem; margin: 0; }
+  .kalem .sure { color: var(--soluk); font-size: 0.92rem; white-space: nowrap; }
+  .kalem .fiyat { margin-left: auto; font-weight: 700; color: var(--altin); white-space: nowrap; font-size: 1.1rem; }
+  .kalem p { margin: 0.3rem 0 0; color: var(--soluk); font-size: 0.98rem; max-width: 30rem; }
+
+  /* ---------- Ekibimiz ---------- */
+  .ekip { display: grid; gap: 2rem; }
+  @media (min-width: 40rem) { .ekip { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 72rem) { .ekip { grid-template-columns: repeat(4, 1fr); } }
+  .usta .foto { aspect-ratio: 4 / 3; margin-bottom: 1.1rem; place-items: center; }
+  .usta .monogram span { font-family: var(--baslik); font-style: normal; font-size: 5rem; line-height: 1; color: var(--altin); }
+  .usta .slogan { font-family: var(--baslik); font-style: italic; color: var(--altin-acik); margin: 0 0 0.6rem; }
+  .usta h3 { font-size: 1.7rem; margin: 0; }
+  .usta .unvan { color: var(--altin); font-weight: 500; margin: 0.15rem 0 0.4rem; }
+  .usta p { margin: 0; color: var(--soluk); font-size: 0.98rem; }
+
+  /* ---------- Randevu ---------- */
+  .randevu { background: var(--siyah-2); }
+  .adimlar { display: grid; gap: 2.5rem; counter-reset: a; }
+  @media (min-width: 56rem) { .adimlar { grid-template-columns: repeat(3, 1fr); } }
+  .adim { border-top: 1px solid var(--altin); padding-top: 1.4rem; }
+  .adim::before { counter-increment: a; content: counter(a); font-family: var(--baslik); font-style: italic; font-size: 2.6rem; line-height: 1; color: var(--altin); }
+  .adim h3 { font-size: 1.6rem; margin: 0.7rem 0 0.35rem; }
+  .adim p { margin: 0; color: var(--soluk); }
+  .randevu .son { margin-top: 3rem; display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+  /* ---------- Yorumlar ---------- */
+  .yorumlar .kutu { border: 1px solid var(--tel); padding: 2.5rem; display: grid; gap: 1.5rem; align-items: center; background: var(--siyah-3); }
+  @media (min-width: 56rem) { .yorumlar .kutu { grid-template-columns: auto 1fr auto; gap: 3rem; } }
+  .yildiz { font-family: var(--baslik); font-size: 3.6rem; line-height: 1; color: var(--altin); }
+  .yorumlar p { margin: 0; color: var(--soluk); }
+
+  /* ---------- Galeri ---------- */
+  .mozaik { display: grid; gap: 0.5rem; grid-template-columns: repeat(3, 1fr); }
+  .mozaik .foto { aspect-ratio: 3 / 4; padding: 0; }
+  @media (min-width: 56rem) { .mozaik { gap: 0.75rem; } }
+
+  /* ---------- Iletisim ---------- */
+  .iletisim .kap { display: grid; gap: 3rem; }
+  @media (min-width: 56rem) { .iletisim .kap { grid-template-columns: 1fr 1.2fr; gap: 5rem; } }
+  dl { margin: 0; } dt { color: var(--soluk); font-size: 0.9rem; margin-top: 1.25rem; } dd { margin: 0.2rem 0 0; font-size: 1.15rem; font-weight: 500; }
+  table { width: 100%; border-collapse: collapse; margin-top: 0.4rem; font-size: 1.02rem; }
+  td { padding: 0.55rem 0; border-top: 1px solid var(--tel); } td:last-child { text-align: right; font-weight: 700; color: var(--altin); }
+  .harita { width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--tel); background: var(--siyah-3); display: grid; place-items: center; color: #7d745f; font-style: italic; padding: 1rem; text-align: center; }
+  /* gercek Google harita yerlestirilince koyu temaya uysun */
+  iframe.harita { filter: grayscale(1) invert(0.9) contrast(0.9) sepia(0.25); }
+
+  footer { background: var(--siyah); border-top: 1px solid var(--tel); color: var(--soluk); padding: 3.5rem 0 3rem; }
+  footer .kap { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; align-items: center; justify-content: space-between; }
+  footer .logo { font-size: 1.8rem; }
+  footer nav { display: flex; gap: 1.5rem; flex-wrap: wrap; } footer nav a:hover { color: var(--altin-acik); }
+
+  .cubuk { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: flex; gap: 0.6rem;
+    padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom, 0px)); background: rgba(11,10,8,0.95); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-top: 1px solid var(--tel); }
+  .cubuk .dugme { flex: 1; }
+  @media (min-width: 56rem) { .cubuk { display: none; } body { padding-bottom: 0; } }
+  @media (max-width: 55.99rem) { .giris { padding-bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px)); } .giris::after { bottom: 5.75rem; } .ust .rnd { display: none; } }
+</style>
+</head>
+<body>
+
+<header class="ust">
+  <div class="kap">
+    <a href="#" class="logo">Makine Berber</a>
+    <nav aria-label="Bölümler">
+      <a href="#hikaye">Anlayışımız</a><a href="#hizmetler">Hizmetler</a><a href="#ekip">Ekibimiz</a><a href="#iletisim">İletişim</a>
+    </nav>
+    <a class="dugme ana rnd" href="https://wa.me/905422432029?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">Randevu al</a>
+  </div>
+</header>
+
+<section class="giris" aria-label="Giriş">
+  <div class="foto-arka"><img src="kesim-arka.jpg" alt="Makine Berber'de yapılmış fade geçişli saç kesimi, arkadan görünüm" style="object-position: center 30%;"></div>
+  <div class="kap">
+    <h1>Makine<br>Berber</h1>
+    <p class="yer">Tokatköy, Beykoz</p>
+    <p class="ozet">Saç kesimi, sakal ve bakım; acele etmeden, ölçüyle ve özenle.</p>
+    <div class="eylemler">
+      <a class="dugme ana" href="https://wa.me/905422432029?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan randevu al</a>
+      <a class="dugme ince" href="#hizmetler">Hizmetlerimiz</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section id="hikaye" class="hikaye">
+    <div class="kap">
+      <div>
+        <h2>Anlayışımız</h2>
+        <p class="alinti">“Ustalık, özen ve güven bir arada.”</p>
+        <p>Her kesim, yüz hatlarınıza ve tarzınıza göre tasarlanır. Makine ve makası birlikte kullanır; klasik ve modern kesimde, fade geçişte, sakal ve kontürde aynı özeni gösteririz.</p>
+        <p>Kullandığımız aletlerin hijyenine ve sterilizasyonuna önem veririz; koltuğa oturduğunuzda içiniz rahat olsun.</p>
+        <p class="imza">Ramazan Gültekin, Profesyonel Berber Ustası</p>
+      </div>
+      <div class="foto dukkan"><img src="dukkan.jpg" alt="Makine Berber dükkânının vitrinden görünümü, berber koltukları ve lavabolar" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section id="hizmetler" class="hizmetler">
+    <div class="kap">
+      <h2>Hizmetler</h2>
+      <p class="alt">Güncel fiyatlar için WhatsApp'tan yazın, hemen dönüş yapalım.</p>
+      <div class="menu">
+        <div class="kalem"><div class="satir"><h3>Klasik ve modern kesim</h3></div><p>Yüz hatlarınıza uygun; makine ve makasla.</p></div>
+        <div class="kalem"><div class="satir"><h3>Fade ve geçişler</h3></div><p>Temiz, dengeli geçişler; trend kesimler.</p></div>
+        <div class="kalem"><div class="satir"><h3>Sakal ve kontür</h3></div><p>Sakal tasarımı ve detaylı kontür çalışması.</p></div>
+        <div class="kalem"><div class="satir"><h3>Saç ve sakal</h3></div><p>İkisi bir arada, tek seferde.</p></div>
+        <div class="kalem"><div class="satir"><h3>Saç tasarımı</h3></div><p>Desen ve kişiye özel stil çalışmaları.</p></div>
+      </div>
+      <div class="son" style="margin-top:2.5rem">
+        <a class="dugme ana" href="https://wa.me/905422432029?text=Merhaba%2C%20fiyat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener">Fiyat sor</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ayrac" aria-hidden="true"></div>
+  <section id="ekip">
+    <div class="kap">
+      <h2>Ekibimiz</h2>
+      <p class="alt">Her ustanın kendi eli ve stili var.</p>
+      <div class="ekip">
+        <div class="usta"><div class="foto"><img src="ramazan.jpg" alt="Ramazan Gültekin müşterisinin saçını makineyle kesiyor" loading="lazy" style="object-position: center 22%;"></div><h3>Ramazan Gültekin</h3><p class="unvan">Profesyonel Berber Ustası</p><p class="slogan">“Ustalık, özen ve güven bir arada.”</p><p>Klasik ve modern kesim, makine ve makas işçiliği, fade geçiş, sakal ve kontür; yüz hatlarına uygun tasarım.</p></div>
+        <div class="usta"><div class="foto monogram" aria-hidden="true"><span>M</span></div><h3>Muhammet Oral</h3><p class="unvan">Berber Ustası · Kişiye Özel Stil ve Bakım</p><p class="slogan">“Tarzını keşfet, farkını yansıt.”</p><p>Modern ve klasik tasarım, fade, sakal tasarımı ve detaylı kontür.</p></div>
+        <div class="usta"><div class="foto monogram" aria-hidden="true"><span>Y</span></div><h3>Yusuf Gültekin</h3><p class="unvan">Yeni nesil berber</p><p class="slogan">“Your hair. Your rules. Your style.”</p><p>Modern fade, trend kesimler, textured cuts, sakal ve kontür; kişisel stil.</p></div>
+        <div class="usta"><div class="foto monogram" aria-hidden="true"><span>B</span></div><h3>Bekir Bozkurt</h3><p class="unvan">Geleneksel Berber Ustası</p><p class="slogan">“Eski usul ustalık, her zaman geçerli değerler.”</p><p>Klasik erkek tıraşı ve geleneksel sakal tıraşı; özenli işçilik, hijyen ve samimi esnaflık.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="randevu">
+    <div class="kap">
+      <h2>Randevu nasıl alınır?</h2>
+      <p class="alt">Bekleme yok, sürpriz yok. Üç adım.</p>
+      <div class="adimlar">
+        <div class="adim"><h3>Yazın</h3><p>WhatsApp'tan hangi hizmeti ve hangi günü istediğinizi yazın.</p></div>
+        <div class="adim"><h3>Saatinizi seçin</h3><p>Size boş saatleri söyleriz; uygun olanı seçersiniz.</p></div>
+        <div class="adim"><h3>Gelin</h3><p>Saatinizde koltuğunuz hazır. Gelemeyecekseniz haber vermeniz yeter.</p></div>
+      </div>
+      <div class="son">
+        <a class="dugme koyu" href="https://wa.me/905422432029?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan yaz</a>
+        <a class="dugme koyu" href="tel:+905422432029">Telefonla ara</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="galeri">
+    <div class="kap">
+      <h2>Dükkândan</h2>
+      <p class="alt">Ustalarımızın elinden çıkan kesimlerden.</p>
+      <div class="mozaik">
+        <div class="foto"><img src="kesim-arka.jpg" alt="Fade geçişli kesim, arkadan görünüm" loading="lazy"></div>
+        <div class="foto"><img src="kesim-fade.jpg" alt="Fade geçişli kesim, yandan görünüm" loading="lazy"></div>
+        <div class="foto"><img src="kesim-desen.jpg" alt="Saç deseni çalışması" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ayrac" aria-hidden="true"></div>
+  <section id="iletisim" class="iletisim" style="padding-top: 0;">
+    <div class="kap">
+      <div>
+        <h2>İletişim</h2>
+        <dl>
+          <dt>Adres</dt><dd>Sultan Aziz Cd., Tokatköy<br>34825 Beykoz / İstanbul<br><a href="https://www.google.com/maps?q=Tokatk%C3%B6y+Sultan+Aziz+Cd+Beykoz" target="_blank" rel="noopener" style="color:var(--altin);font-size:0.95rem;font-weight:400">Haritada aç →</a></dd>
+          <dt>Telefon / WhatsApp</dt><dd><a href="tel:+905422432029">0542 243 20 29</a></dd>
+          <dt>Çalışma saatleri</dt>
+          <dd><table><tr><td>Pazartesi – Cumartesi</td><td>08:00 – 23:00</td></tr><tr><td>Pazar</td><td>Kapalı</td></tr></table></dd>
+        </dl>
+      </div>
+      <iframe class="harita" title="Makine Berber harita konumu" src="https://www.google.com/maps?q=Tokatk%C3%B6y+Sultan+Aziz+Cd+Beykoz&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="kap">
+    <span class="logo">Makine Berber</span>
+    <nav aria-label="İletişim"><a href="https://wa.me/905422432029?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a><a href="tel:+905422432029">0542 243 20 29</a></nav>
+    <small>Sultan Aziz Cd., Tokatköy, Beykoz</small>
+  </div>
+</footer>
+
+<nav class="cubuk" aria-label="Hızlı iletişim">
+  <a class="dugme ana" href="https://wa.me/905422432029?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">Randevu al</a>
+  <a class="dugme ince" href="tel:+905422432029">Ara</a>
+</nav>
+
+</body>
+</html>
